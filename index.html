@@ -12,15 +12,15 @@
     <header class="fixed">
         <div class="container ">
             <nav class="nav-bar">
-                <div class="nav-logo">
+                <div class="nav-logo" onclick="reload()">
                     <img src="asset\SAKURA-LOGO.png" alt="Sakura News">
                 </div>
                 <div class="nav-list">
-                    <li class="list-itms"><a href="#" class="nav-anc">Latest</a></li>
-                    <li class="list-itms"><a href="#" class="nav-anc">Latest</a></li>
-                    <li class="list-itms"><a href="#" class="nav-anc">Latest</a></li>
-                    <li class="list-itms"><a href="#" class="nav-anc">Latest</a></li>
-                    <li class="list-itms"><a href="#" class="nav-anc">Latest</a></li>
+                    <li class="list-itms"><a href="#" onclick="latest()" class="nav-anc">Latest</a></li>
+                    <li class="list-itms"><a href="#" onclick="trending()" class="nav-anc">Trending</a></li>
+                    <li class="list-itms"><a href="#" onclick="sports()" class="nav-anc">Sports</a></li>
+                    <li class="list-itms"><a href="#" onclick="technology()" class="nav-anc">Technology</a></li>
+                    <li class="list-itms"><a href="#" onclick="food()" class="nav-anc">Food</a></li>
                 </div>
                 <div class="search-bar">
                     <input type="text" placeholder="Eg. Sports">
@@ -36,7 +36,7 @@
             </div>
 
         <div class="load-flex">
-            <button class="btn load-more">Load More</button>
+            <button class="btn" id="loadMore">Load More</button>
         </div>
         </div>
     </main>

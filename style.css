@@ -157,3 +157,15 @@ header{
     align-items: center;
     justify-content: center;
 }
+
+.btn{
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: var(--rosewood);
+    color: var(--font-color);
+    border-radius: 5px;
+}
+
+.btn:active{
+    background-color: var(--active-color);
+}

@@ -1,9 +1,14 @@
 const API = "jJvdy-Tw_vtvxkU8BJyKJvAa43n_aRaX2BnJHFkfDhOuomHM";
 const url = "https://api.currentsapi.services/v1/search?keywords=";
 // "https://api.currentsapi.services/v1/search?keywords=technology&language=en&page_number=1&page_size=5&apiKey=YOUR_API_KEY"
+const loadMore= document.getElementById("loadMore");
+let query = null;
 
+window.addEventListener("load", () => fetchnews("India"));
 
-fetchnews("science");
+function reload() {
+    window.location.reload();
+}
 
 
 async function fetchnews(query) {
@@ -54,5 +59,22 @@ function fillingCard(news) {
 
 }
 
+let page = 1;
+loadMore.onclick = () => {
+    page++
+    query ? fetchnewspages(query) :fetchnewspages("India");   
+}
 
+async function fetchnewspages(query) {
+    const res = await fetch(`${url}${query}&language=en&page_number=${page}&apiKey=${API}`);
+    const data = await res.json();
+    fillingCard(data.news);
 
+}
+
+function latest(){
+    query= "latest";
+    const cardcontainer = document.querySelector(".card-container");
+    cardcontainer.innerHTML = "";
+    fetchnews(query);
+}
