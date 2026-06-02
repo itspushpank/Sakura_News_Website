@@ -78,3 +78,41 @@ function latest(){
     cardcontainer.innerHTML = "";
     fetchnews(query);
 }
+
+function trending(){
+    query= "trending";
+    const cardcontainer = document.querySelector(".card-container");
+    cardcontainer.innerHTML = "";
+    fetchnews(query);
+}
+
+function sports(){
+    query= "sports";
+    const cardcontainer = document.querySelector(".card-container");
+    cardcontainer.innerHTML = "";
+    fetchnews(query);
+}
+
+function technology(){
+    query= "technology";
+    const cardcontainer = document.querySelector(".card-container");
+    cardcontainer.innerHTML = "";
+    fetchnews(query);
+}
+
+function food(){
+    query= "food";
+    const cardcontainer = document.querySelector(".card-container");
+    cardcontainer.innerHTML = "";
+    fetchnews(query);
+}
+
+const searchBtn = document.getElementById("searchBtn");
+
+searchBtn.onclick = () => {
+    const searchInp = document.getElementById("searchInp");
+    query = searchInp.value;
+    const cardcontainer = document.querySelector(".card-container");
+    cardcontainer.innerHTML = "";
+    fetchnews(query);
+}
