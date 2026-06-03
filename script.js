@@ -39,8 +39,8 @@ function fillingCard(news) {
             </div>
             <div class="card-content">
                 <h2 class="title">${element.title}</h2>
-                <p class="discription">${element.description}</p>
                 <p class="author">${element.author}-${date}</p>
+                <p class="discription">${element.description}</p>
             </div>
         `;  
 
