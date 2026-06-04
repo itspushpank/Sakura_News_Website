@@ -4,16 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sakura News</title>
+    <title>Horizon News</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
+<body class="darktheme">
     <header class="fixed">
-        <div class="container ">
+        <div class="container">
             <nav class="nav-bar">
                 <div class="nav-logo" onclick="reload()">
-                    <img src="asset\SAKURA-LOGO.png" alt="Sakura News">
+                    <img src="asset\logo.png" alt="Sakura News">
                 </div>
                 <div class="nav-list">
                     <li class="list-itms"><a href="#" onclick="latest()" class="nav-anc">Latest</a></li>
@@ -21,23 +24,26 @@
                     <li class="list-itms"><a href="#" onclick="sports()" class="nav-anc">Sports</a></li>
                     <li class="list-itms"><a href="#" onclick="technology()" class="nav-anc">Technology</a></li>
                     <li class="list-itms"><a href="#" onclick="food()" class="nav-anc">Food</a></li>
-                </div>
-                <div class="search-bar">
-                    <input id="searchInp" type="text" placeholder="Eg. Sports">
-                    <button id="searchBtn">Search</button>
+                    <div class="search-icon" id="searchicon"><i class="fa-solid fa-magnifying-glass"></i></div>
                 </div>
             </nav>
         </div>
+        <div class="search-form" id="sercontainer">
+            <form action="#" id="seform">
+                <div class="serinpdiv"><input type="text" id="serinp" placeholder="Eg : Football, Anime, etc." autocomplete="off"></div>
+                <button type="submit" class="serbtn">Search</button>
+            </form>
+        </div>
     </header>
     <main>
-        <div class="container container2">
+        <div class="container2" >
             <div class="card-container">
 
             </div>
 
-        <div class="load-flex">
-            <button class="btn" id="loadMore">Load More</button>
-        </div>
+            <div class="load-flex">
+                <button class="btn" id="loadMore">Load More</button>
+            </div>
         </div>
     </main>
 

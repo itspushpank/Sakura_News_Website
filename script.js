@@ -2,6 +2,7 @@ const API = "jJvdy-Tw_vtvxkU8BJyKJvAa43n_aRaX2BnJHFkfDhOuomHM";
 const url = "https://api.currentsapi.services/v1/search?keywords=";
 // "https://api.currentsapi.services/v1/search?keywords=technology&language=en&page_number=1&page_size=5&apiKey=YOUR_API_KEY"
 const loadMore= document.getElementById("loadMore");
+const cardcontainer = document.querySelector(".card-container");
 let query = null;
 
 window.addEventListener("load", () => fetchnews("India"));
@@ -20,8 +21,6 @@ async function fetchnews(query) {
 }
 
 function fillingCard(news) {
-
-    const cardcontainer = document.querySelector(".card-container");
 
     news.forEach(element => {
 
@@ -74,45 +73,54 @@ async function fetchnewspages(query) {
 
 function latest(){
     query= "latest";
-    const cardcontainer = document.querySelector(".card-container");
     cardcontainer.innerHTML = "";
     fetchnews(query);
 }
 
 function trending(){
     query= "trending";
-    const cardcontainer = document.querySelector(".card-container");
     cardcontainer.innerHTML = "";
     fetchnews(query);
 }
 
 function sports(){
     query= "sports";
-    const cardcontainer = document.querySelector(".card-container");
     cardcontainer.innerHTML = "";
     fetchnews(query);
 }
 
 function technology(){
     query= "technology";
-    const cardcontainer = document.querySelector(".card-container");
     cardcontainer.innerHTML = "";
     fetchnews(query);
 }
 
 function food(){
     query= "food";
-    const cardcontainer = document.querySelector(".card-container");
     cardcontainer.innerHTML = "";
     fetchnews(query);
 }
 
-const searchBtn = document.getElementById("searchBtn");
+const seform = document.getElementById("seform");
 
-searchBtn.onclick = () => {
-    const searchInp = document.getElementById("searchInp");
-    query = searchInp.value;
-    const cardcontainer = document.querySelector(".card-container");
+seform.addEventListener("submit",(e) => {
+    e.preventDefault();
+    const serinp = document.getElementById("serinp");
+    query = serinp.value;
+    console.log(query)
     cardcontainer.innerHTML = "";
+    sercontainer.classList.toggle("show");
+    mainspacing.classList.toggle("space");
     fetchnews(query);
-}
+});
+
+const searchicon =  document.getElementById("searchicon");
+const sercontainer = document.getElementById("sercontainer");
+const mainspacing = document.querySelector(".container2");
+
+
+searchicon.addEventListener("click", () => {
+    sercontainer.classList.toggle("show");
+    mainspacing.classList.toggle("space");
+});
+
