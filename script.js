@@ -3,6 +3,7 @@ const url = "https://api.currentsapi.services/v1/search?keywords=";
 // "https://api.currentsapi.services/v1/search?keywords=technology&language=en&page_number=1&page_size=5&apiKey=YOUR_API_KEY"
 const loadMore= document.getElementById("loadMore");
 const cardcontainer = document.querySelector(".card-container");
+const content = document.querySelector(".ticker-content");
 let query = null;
 
 window.addEventListener("load", () => fetchnews("India"));
@@ -17,7 +18,26 @@ async function fetchnews(query) {
     const data = await res.json();
     console.log(data.news)
     fillingCard(data.news);
+    scroll(data.news);
 
+}
+
+function scroll(news){
+    news.forEach(element => {
+        const content = document.querySelector(".ticker-content");
+        const newstitles = document.createElement("span");
+        const space= document.createElement("span");
+
+        newstitles.classList.add("title-scroll");
+        space.classList.add("title-scroll")
+        newstitles.innerHTML= ` ${element.title}`;
+        space.innerHTML=`⬤`;
+
+        newstitles.addEventListener("click", () => {window.open(element.url, "_blank");});
+
+        content.append(newstitles);
+        content.append(space);
+    });
 }
 
 function fillingCard(news) {
@@ -74,30 +94,36 @@ async function fetchnewspages(query) {
 function latest(){
     query= "latest";
     cardcontainer.innerHTML = "";
+    content.innerHTML="";
     fetchnews(query);
 }
 
 function trending(){
     query= "trending";
     cardcontainer.innerHTML = "";
+    content.innerHTML="";
     fetchnews(query);
 }
 
 function sports(){
     query= "sports";
     cardcontainer.innerHTML = "";
+    content.innerHTML="";
     fetchnews(query);
 }
 
 function technology(){
     query= "technology";
     cardcontainer.innerHTML = "";
+    content.innerHTML="";
     fetchnews(query);
 }
 
 function food(){
     query= "food";
     cardcontainer.innerHTML = "";
+    content.innerHTML="";
+
     fetchnews(query);
 }
 
@@ -109,6 +135,7 @@ seform.addEventListener("submit",(e) => {
     query = serinp.value;
     console.log(query)
     cardcontainer.innerHTML = "";
+    content.innerHTML="";
     sercontainer.classList.toggle("show");
     mainspacing.classList.toggle("space");
     fetchnews(query);
