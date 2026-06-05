@@ -75,6 +75,7 @@
 }
 
 .list-itms {
+    padding-top: 0.5rem;
     list-style: none;
 }
 
@@ -98,13 +99,32 @@
 }
 
 
-.fa-magnifying-glass {
+.icon{
     font-size: 1.1rem;
     color: var(--nav-font-color);
 }
 
-.fa-magnifying-glass:hover {
+.icon:hover {
     color: var(--hover-color);
+}
+
+
+.dishidden{
+    display: none !important;
+}
+
+.themediv{
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 20px;
+    border: 1px solid var(--nav-font-color);
+}
+
+.search-icon{
+    margin: 0 0 0 0.5rem;
+    padding: 0.5rem;
+    border-radius: 20px;
+    border: 1px solid var(--nav-font-color);
 }
 
 .search-form {

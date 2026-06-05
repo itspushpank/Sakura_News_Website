@@ -124,3 +124,28 @@ searchicon.addEventListener("click", () => {
     mainspacing.classList.toggle("space");
 });
 
+const themediv = document.querySelector(".themediv");
+const sun = document.getElementById("sun");
+const moon = document.getElementById("moon");
+
+function setmode(theme){
+    if (theme === "dark"){
+        document.body.classList.add("darktheme");
+        sun.classList.remove("dishidden");
+        moon.classList.add("dishidden");
+    }
+    else{
+        document.body.classList.remove("darktheme");
+        sun.classList.add("dishidden");
+        moon.classList.remove("dishidden");
+    }
+
+    localStorage.setItem("theme",theme);
+}
+
+setmode(localStorage.getItem("theme" || "light"));
+
+themediv.addEventListener("click",() => {
+    const isDark = document.body.classList.contains("darktheme");
+    setmode(isDark? "light" : "dark");
+});
